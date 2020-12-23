@@ -1,7 +1,7 @@
 import java.util.*;
 public class PigLatin {
     public static void main(String[] args) {
-        System.out.println(pigLatin(args[0]));
+        System.out.println(pigLatinBest(args[0]));
     }
 
     public static String pigLatinSimple(String s) {
@@ -22,6 +22,17 @@ public class PigLatin {
             return s.substring(2) + s.substring(0, 2) + "ay";
         } else {
             return s.substring(1) + s.charAt(0) + "ay";
+        }
+    }
+
+    public static String pigLatinBest(String s) {
+        s = s.toLowerCase();
+        if (!Character.isLetter(s.charAt(0))) {
+            return s;
+        } else if (!Character.isLetterOrDigit(s.charAt(s.length() - 1))) {
+            return pigLatin(s.substring(0, s.length() - 1)) + s.charAt(s.length() - 1);
+        } else {
+            return pigLatin(s);
         }
     }
 }
