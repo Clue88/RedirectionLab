@@ -10,7 +10,8 @@ public class MakeStars {
                 for (int i = 0; i < length; i++) {
                     stars += "*";
                 }
-                System.out.print(stars + " ");
+                System.out.print(stars);
+                if (line.hasNext()) System.out.print(" ");
             }
             System.out.println();
         }
