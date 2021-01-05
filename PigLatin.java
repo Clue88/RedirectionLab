@@ -5,7 +5,8 @@ public class PigLatin {
         while (n.hasNextLine()) {
             Scanner line = new Scanner(n.nextLine());
             while (line.hasNext()) {
-                System.out.print(pigLatinBest(line.next()) + " ");
+                System.out.print(pigLatinBest(line.next()));
+                if (line.hasNext()) System.out.print(" ");
             }
             System.out.println();
         }
